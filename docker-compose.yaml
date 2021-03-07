@@ -1,0 +1,29 @@
+version: "3.3"
+
+services:
+
+  emby:
+    image: linuxserver/emby
+    container_name: emby
+    restart: unless-stopped 
+    ports:
+      - "8200:8096"
+#     - "8920:8920" #optional      
+    environment:
+      - PUID=998
+      - PGID=1000
+      - TZ=Europe/Madrid
+#     - UMASK_SET=022 #optional      
+    volumes:
+      - ./library:/config
+      - ./tvshows:/data/tvshows
+      - ./movies:/data/movies
+       - ./music:/data/music    
+#     - /opt/vc/lib:/opt/vc/lib #optional
+
+
+
+
+
+
+ 
