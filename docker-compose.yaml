@@ -20,10 +20,4 @@ services:
       - ./movies:/data/movies
       - ./music:/data/music    
 #     - /opt/vc/lib:/opt/vc/lib #optional
-
-
-
-
-
-
  
