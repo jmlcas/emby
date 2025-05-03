@@ -1,19 +1,18 @@
 services:
 
   emby:
-    image: lscr.io/linuxserver/emby:latest
+    image: emby/embyserver:latest
     container_name: emby
-    restart: unless-stopped 
+    restart: unless-stopped
     ports:
       - "8096:8096"
-      - "8920:8920" #optional      
+      - "8920:8920"
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Madrid   
+      - UID=1000
+      - GID=1000
+      - TZ=Europe/Madrid
     volumes:
       - ./library:/config
-      - ./tvshows:/data/tvshows
-      - ./movies:/data/movies
-      - ./music:/data/music    
+      - ./tvshows:/mnt/share1
+      - ./movies:/mnt/share2
 
