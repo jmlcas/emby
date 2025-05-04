@@ -1,7 +1,7 @@
 services:
 
   emby:
-    image: emby/embyserver:latest
+    image: emby/embyserver:latest   # emby/embyserver_arm64v8:latest | emby/embyserver_arm32v7:latest 
     container_name: emby
     restart: unless-stopped
     ports:
